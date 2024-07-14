@@ -31,12 +31,12 @@ pipeline {
                 sh './venv/bin/pytest tests/'
             }
         }
-    }
 
-    post {
-        always {
-            // Clean up environment
-            sh 'rm -rf venv'
+        stage('Clean Up') {
+            steps {
+                // Clean up environment
+                sh 'rm -rf venv'
+            }
         }
     }
 }
