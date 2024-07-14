@@ -4,9 +4,16 @@ pipeline {
     stages {
         stage('Set Up Python') {
             steps {
-                // Install Python packages using pip
+                // Install Python virtual env using pip
                 sh 'python3 -m venv venv'
+
+                // Activate the virtual environment
+                sh 'source venv/bin/activate'
+
+                // Upgrade pip inside the virtual environment
                 sh './venv/bin/pip install --upgrade pip'
+
+                // Install python dependencies using pip
                 sh './venv/bin/pip install -r requirements.txt'
             }
         }
