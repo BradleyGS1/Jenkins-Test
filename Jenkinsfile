@@ -13,7 +13,7 @@ pipeline {
                 // Upgrade pip inside the virtual environment
                 sh './venv/bin/pip install --upgrade pip'
 
-                sh 'python3 -c "import distutils"'
+                sh 'venv -c "import distutils"'
 
                 // Install python dependencies using pip
                 sh './venv/bin/pip install -r requirements.txt'
