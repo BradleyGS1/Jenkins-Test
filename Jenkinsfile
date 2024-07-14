@@ -2,12 +2,6 @@ pipeline {
     agent { label 'agent1' }
 
     stages {
-        stage('Clone Repository') {
-            steps {
-                git 'https://github.com/BradleyGS1/Jenkins-Test'
-            }
-        }
-
         stage('Set Up Python') {
             steps {
                 // Install Python packages using pip
