@@ -34,10 +34,15 @@ pipeline {
             }
         }
 
-        stage('Clean Up') {
-            steps {
-                // Clean up environment
-                sh 'rm -rf venv'
+    }
+
+    post {
+        always {
+            stage('Clean Up') {
+                steps {
+                    // Clean up environment
+                    sh 'rm -rf venv'
+                }
             }
         }
     }
