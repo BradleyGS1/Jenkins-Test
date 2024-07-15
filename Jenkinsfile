@@ -38,11 +38,10 @@ pipeline {
 
     post {
         always {
-            stage('Clean Up') {
-                steps {
-                    // Clean up environment
-                    sh 'rm -rf venv'
-                }
+            steps {
+                // Clean up environment
+                sh 'echo "Cleaning up...'
+                sh 'rm -rf venv'
             }
         }
     }
