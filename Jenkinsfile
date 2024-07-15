@@ -39,7 +39,7 @@ pipeline {
     post {
         always {
             // Clean up environment
-            sh 'echo "Cleaning up...'
+            sh 'echo "Cleaning up..."'
             sh 'rm -rf venv'
         }
     }
